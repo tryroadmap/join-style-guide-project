@@ -288,9 +288,9 @@ Python is the main dynamic language used at [LotusX].
 
 ### Run Yapf
 [Example of a Yapf edit](https://github.com/google/yapf/)
-```sh x = {  'a':37,'b':42,
+```sh x  
 
-'c':927}
+x = {  'a':37,'b':42, 'c':927}
 
 y = 'hello ''world'
 z = 'hello '+'world'
@@ -305,8 +305,9 @@ def f  (   a ) :
 ```
 reformat it to:
 
-```sh x = {'a': 37, 'b': 42, 'c': 927}
+```sh x  
 
+x = {'a': 37, 'b': 42, 'c': 927}
 y = 'hello ' 'world'
 z = 'hello ' + 'world'
 a = 'hello {}'.format('world')
@@ -348,7 +349,8 @@ See List Comprehension.
 
 ### Default Iterator and Operators
 Use them.
-```sh Yes:  for key in adict: ...
+```sh Yes
+      for key in adict: ...
       if key not in adict: ...
       if obj in alist: ...
       for line in afile: ...
