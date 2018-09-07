@@ -4,15 +4,16 @@ Exercise the style guides here. Someone other than you will be reviewing your wo
 - [R Style Guide](#r-style-guide)
 - [Python Style Guide](#python-style-guide)
 
-This is from Google's R Style Guide and CMU (names, alignment, locality, and comments) coding guidelines. For more details visit:
+
+
+# R Style Guide
+
+This Style Guideline, in many parts, is referencing Google's R Style Guide and CMU (names, alignment, locality, and comments) coding guidelines. For more details visit:
 - [Google R Style Guide](https://google.github.io/styleguide/Rguide.xml)
 - [CMU Code Style](https://www.cs.cmu.edu/~pattis/15-1XX/15-200/lectures/style/lecture.html)
 - [CMU Code Style](http://www.cs.cmu.edu/~./213/codeStyle.html)
 
 
-
-
-# R Style Guide
 ### Summary: R Style Rules
 * [File Names](#11-file-names): end in .R
 * [Identifiers](#12-identifiers): variable.name (or variableName), FunctionName, kConstantName
@@ -283,8 +284,11 @@ The point of having style guidelines is to have a common vocabulary of coding so
 
 
 # Python Style Guide
-Python is the main dynamic language used at [LotusX].
+Python is the main dynamic language used at most teams including [LotusX].
 
+
+[Style Guide for Python Code from Python.org](https://www.python.org/dev/peps/pep-0008/)
+[Google Guide for Python Code](https://google.github.io/styleguide/pyguide.html)
 
 ### Run Yapf
 [Example of a Yapf edit](https://github.com/google/yapf/)
