@@ -15,9 +15,9 @@ This is from Google's R Style Guide and CMU (names, alignment, locality, and com
 # R Style Guide
 ### Summary: R Style Rules
 * [File Names](#11-file-names): end in .R
-* Identifiers: variable.name (or variableName), FunctionName, kConstantName
-* Line Length: maximum 80 characters
-* Indentation: two spaces, no tabs
+* [Identifiers](#12-identifiers): variable.name (or variableName), FunctionName, kConstantName
+* [Line Length](#21-line-length): maximum 80 characters
+* [Indentation](#22-Indentation): two spaces, no tabs
 * Spacing
 * Curly Braces: first on same line, last on own line
 * else: Surround else with braces
@@ -30,11 +30,38 @@ This is from Google's R Style Guide and CMU (names, alignment, locality, and com
 * Example Function
 * TODO Style: TODO(username)
 
+## Notation and Naming
 
-## 1.1 File Names
+### 1.1 File Names
 File names should end in .R and, of course, be meaningful.
+```sh
 GOOD: predict_ad_revenue.R
 BAD: foo.R
+```
+
+### 1.2 Identifiers
+Don't use underscores ( _ ) or hyphens ( - ) in identifiers. Identifiers should be named according to the following conventions. The preferred form for variable names is all lower case letters and words separated with dots (variable.name), but variableName is also accepted; function names have initial capital letters and no dots (FunctionName); constants are named like functions but with an initial k.
+
+variable.name is preferred, variableName is accepted
+```sh
+GOOD: avg.clicks
+OK: avgClicks
+BAD: avg_Clicks
+FunctionName
+GOOD: CalculateAvgClicks
+BAD: calculate_avg_clicks , calculateAvgClicks
+Make function names verbs.
+Exception: When creating a classed object, the function name (constructor) and class should match (e.g., lm).
+kConstantName
+```
+## Syntax
+### 2.1 Line Length
+The maximum line length is 80 characters.
+
+### 2.2 Indentation
+When indenting your code, use two spaces. Never use tabs or mix tabs and spaces.
+Exception: When a line break occurs inside parentheses, align the wrapped line with the first character inside the parenthesis.
+
 
 
 # Python Style Guide
