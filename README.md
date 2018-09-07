@@ -251,25 +251,25 @@ Example Function
 ```
 
 
-TODO Style
+### 2.13 TODO Style
 Use a consistent style for TODOs throughout your code.
 TODO(username): Explicit description of action to be taken
 
-Language
+### 2.14 Language
 Attach
 The possibilities for creating errors when using attach are numerous. Avoid it.
 
 Functions
 Errors should be raised using stop().
 
-### Objects and Methods
+### 2.15 Objects and Methods
 The S language has two object systems, S3 and S4, both of which are available in R. S3 methods are more interactive and flexible, whereas S4 methods are more formal and rigorous. (For an illustration of the two systems, see Thomas Lumley's "Programmer's Niche: A Simple Class, in S3 and S4" in R News 4/1, 2004, pgs. 33 - 36: https://cran.r-project.org/doc/Rnews/Rnews_2004-1.pdf.)
 
 Use S3 objects and methods unless there is a strong reason to use S4 objects or methods. A primary justification for an S4 object would be to use objects directly in C++ code. A primary justification for an S4 generic/method would be to dispatch on two arguments.
 
 Avoid mixing S3 and S4: S4 methods ignore S3 inheritance and vice-versa.
 
-### Exceptions
+### 2.16 Exceptions
 The coding conventions described above should be followed, unless there is good reason to do otherwise. Exceptions include legacy code and modifying third-party code.
 
 Parting Words
@@ -279,13 +279,83 @@ If you are editing code, take a few minutes to look at the code around you and d
 
 The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you are saying, rather than on how you are saying it. We present global style rules here so people know the vocabulary. But local style is also important. If code you add to a file looks drastically different from the existing code around it, the discontinuity will throw readers out of their rhythm when they go to read it. Try to avoid this.
 
-OK, enough writing about writing code; the code itself is much more interesting. Have fun!
-
 
 
 
 # Python Style Guide
-coming soon.
+Python is the main dynamic language used at [LotusX].
+
+
+### Run Yapf
+[Example of a Yapf edit](https://github.com/google/yapf/)
+```sh x = {  'a':37,'b':42,
+
+'c':927}
+
+y = 'hello ''world'
+z = 'hello '+'world'
+a = 'hello {}'.format('world')
+class foo  (     object  ):
+  def f    (self   ):
+    return       37*-+2
+  def g(self, x,y=42):
+      return y
+def f  (   a ) :
+  return      37+-+a[42-x :  y**3]
+```
+reformat it to:
+
+```sh x = {'a': 37, 'b': 42, 'c': 927}
+
+y = 'hello ' 'world'
+z = 'hello ' + 'world'
+a = 'hello {}'.format('world')
+
+
+class foo(object):
+    def f(self):
+        return 37 * -+2
+
+    def g(self, x, y=42):
+        return y
+
+
+def f(a):
+    return 37 + -+a[42 - x:y**3]
+```
+
+
+
+### Lint
+Run pylint over your code.
+
+### Imports
+Use import for packages and modules only. If you are using Eclipse or an IDE that tends to import classes make necessary changes. Refer to [Google Python Guide for more details on import guidelines](https://github.com/google/styleguide/blob/gh-pages/pyguide.md)
+
+### Exceptions
+Allowed at higher function level but for two reasons should be avoided especially if being used at low-level:
+* complicates group testing
+* harder to read for unit testing
+
+### Global Variables
+Python is a dynamic programming language. Variables that are declared at the module level or as class attributes can affect modules and classes during import. Avoid using Global Variables.
+
+### List Comprehension
+Use in methods and simple cases only and consistently. If you are using list comprehension to assign Dataframe values to tupples always stick to it in your code across all your methods.  
+
+### Generator Expression
+See List Comprehension.
+
+### Default Iterator and Operators
+Use them.
+```sh Yes:  for key in adict: ...
+      if key not in adict: ...
+      if obj in alist: ...
+      for line in afile: ...
+      for k, v in dict.iteritems(): ...
+
+```
+
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
